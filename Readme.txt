@@ -21,6 +21,7 @@ Installation Instructions
 
 1.	Download the Application:
 	•	Unzip the 2320756.zip file.
+	•	Alternatively, you can clone the project from https://github.com/Hazeem01/sql-explorer
 2.	Java Installation:
 	•	Ensure Java is installed on your system. You can download it from Oracle’s Java site or install via package manager on Linux.
 3.	Running the Application:
