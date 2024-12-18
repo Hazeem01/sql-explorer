@@ -1,0 +1,21 @@
+Server: Server 2
+Name: DB 1
+Relationships: 12
+Indexes: 2
+Security: 8723yue
+Backup: Location 500
+
+Server: Server 2
+Name: DB 56
+Relationships: 0
+Indexes: 23
+Security: 678edh
+Backup: Location 32
+
+Server: Server 1
+Name: Db 652
+Relationships: None
+Indexes: 3
+Security: 2345dfs
+Backup: location 532
+
