@@ -12,21 +12,31 @@ public class AddDatabaseScreen {
         System.out.println("1. Server 1");
         System.out.println("2. Server 2");
         System.out.println("3. Server 3");
-        int serverChoice = scanner.nextInt();
-        String destinationServer;
-        switch (serverChoice) {
-            case 1:
-                destinationServer = "Server 1";
+
+        int serverChoice = 0;
+        String destinationServer = "";
+        while (true) {
+            try {
+                serverChoice = scanner.nextInt();
+                switch (serverChoice) {
+                    case 1:
+                        destinationServer = "Server 1";
+                        break;
+                    case 2:
+                        destinationServer = "Server 2";
+                        break;
+                    case 3:
+                        destinationServer = "Server 3";
+                        break;
+                    default:
+                        System.out.println("Invalid server choice. Please choose a valid server (1, 2, or 3):");
+                        continue;
+                }
                 break;
-            case 2:
-                destinationServer = "Server 2";
-                break;
-            case 3:
-                destinationServer = "Server 3";
-                break;
-            default:
-                System.out.println("Invalid server choice. Please choose a valid server.");
-                return;
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a valid server number (1, 2, or 3).");
+                scanner.next();
+            }
         }
 
         scanner.nextLine();

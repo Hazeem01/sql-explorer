@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 public class LoginScreen {
 
     public void display() {
@@ -10,22 +12,34 @@ public class LoginScreen {
 
     private void handleLogin() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        System.out.print("Enter login type (1 for Admin, 2 for User, 3 for Support): ");
-        int userType = scanner.nextInt();
+        int userType = 0;
+        boolean valid = false;
 
-        switch (userType) {
-            case 1:
-                new AdminDashboard().display();
-                break;
-            case 2:
-                new UserDashboard().display();
-                break;
-            case 3:
-                new Chatbot().startInteraction();
-                break;
-            default:
-                System.out.println("Invalid input. Please try again.");
-                this.display();
+        while (!valid) {
+            System.out.print("Enter login type (1 for Admin, 2 for User, 3 for Support): ");
+            try {
+                userType = scanner.nextInt();
+                switch (userType) {
+                    case 1:
+                        new AdminDashboard().display();
+                        valid = true;
+                        break;
+                    case 2:
+                        new UserDashboard().display();
+                        valid = true;
+                        break;
+                    case 3:
+                        new Chatbot().startInteraction();
+                        valid = true;
+                        break;
+                    default:
+                        System.out.println("Invalid input. Please enter 1, 2, or 3.");
+                        break;
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("That's not a valid choice! Please enter a number (1, 2, or 3).");
+                scanner.next();
+            }
         }
     }
 }
